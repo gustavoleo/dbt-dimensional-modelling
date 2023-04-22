@@ -1,7 +1,19 @@
 adventureworks:
-  target: duckdb
+  target: duckdb # leave this as duckdb, or change this to your chosen database
+
+  # supported databases: duckdb, postgres 
   outputs:
-    duckdb:
+    duckdb: 
      type: duckdb
      path: target/adventureworks.duckdb
      threads: 12
+
+    Postgres:  
+      type: postgres
+      host: localhost
+      user: postgres
+      password: Tony@130722
+      port: 5432
+      dbname: adventureworks # create this empty database beforehand 
+      schema: dbo
+      threads: 12
